@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+    {
+    "src": "server.js",
+    "use": "@vercel/node"
+    }
+    ],
+    "routes": [
+    {
+    "src": "/api/(.*)",
+    "dest": "server.js"
+    }
+    ],
+    "env": {
+    "PORT": "3000",
+    "GEMINI": "AIzaSyAims7TTxPcVTMpEPbWRbjX8NPeDDq0ZPQ",
+    "eleven_labs": "sk_386a5cdf4b9f487a2a03c1bd661c3b89e3a2183702681e68",
+    "connectionString": "mongodb+srv://Vismay:wKbuw3idOGbmHrYj@test.vxtkgty.mongodb.net/?retryWrites=true&w=majority&appName=Test"
+    }
+}
