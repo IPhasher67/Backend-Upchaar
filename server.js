@@ -25,7 +25,9 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(express.static(frontendDir));
+
+// NOTE: For Vercel deployment, static serving and app.listen are not used in the backend server.js
+// app.use(express.static(frontendDir));
 
 // JWT Secret (in production, use a strong secret from environment variables)
 const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production';
@@ -822,6 +824,8 @@ app.get('/user-login', (req, res) => {
 	res.sendFile(path.join(frontendDir, 'User Login.html'));
 });
 
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
-});
+
+// NOTE: For Vercel deployment, do NOT use app.listen. All API logic should be in /api/*.js files as serverless functions.
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
