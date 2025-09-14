@@ -49,11 +49,8 @@ const authenticateToken = (req, res, next) => {
 };
 
 
-app.get('/', (req, res) => {
-	res.send("Hi");
-});
-
 // Authentication Routes
+
 
 // User Registration
 app.post('/api/auth/register', [
